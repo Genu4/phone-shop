@@ -17,7 +17,7 @@ const Title = () => {
 }
 const Content = () => {
     return (
-        <React.Fragment>
+        <>
             <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
                 doloribus saepe magnam, non quas quod placeat tenetur velit, ab
@@ -34,7 +34,7 @@ const Content = () => {
                 vero laboriosam voluptate consequuntur laborum quasi perferendis
                 soluta provident fuga eaque.
             </p>
-        </React.Fragment>
+        </>
     )
 }
 
