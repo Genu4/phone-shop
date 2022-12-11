@@ -11,9 +11,13 @@ import ReactDOM from 'react-dom/client'
 // const h1 = React.createElement("h1", {id: 'title', className:'test'}, "Hello React")
 
 //Component повертають зовнішній вигляд. назва з великої!
+type TitleProps = {
+    title: string | number
+}
 
-const Title = () => {
-    return <h1>Hello React.js</h1>
+
+const Title = (props: TitleProps) => {
+    return <h1>Hello {props.title}</h1>
 }
 const Content = () => {
     return (
@@ -41,7 +45,9 @@ const Content = () => {
 const App = () => {
     return (
         <React.Fragment>
-            <Title />
+            <Title title={10} />
+            <Title title="Bla-bla" />
+            <Title title="Bla-bla" />
             <Content />
         </React.Fragment>
     )
