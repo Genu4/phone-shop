@@ -1,7 +1,7 @@
 import { title } from 'process'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Content, {test} from './Content'
+import Content from './Content'
 
 type TitleProps = {
     title: string
@@ -17,12 +17,14 @@ const Title = ({ title, text = 'Test', num }: TitleProps) => {
     )
 }
 
-
 const App = () => {
     return (
         <React.Fragment>
             <Title text="Hello" title="React" />
-            <Content />
+            <Content
+                p1="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis tempora officiis optio sint aut ratione officia dolorum, facilis molestiae accusantium."
+                p2="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis tempora officiis optio sint aut ratione officia dolorum, facilis molestiae accusantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis tempora officiis optio sint aut ratione officia dolorum, facilis molestiae accusantium."
+            />
         </React.Fragment>
     )
 }
