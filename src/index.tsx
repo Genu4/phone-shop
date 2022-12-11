@@ -12,12 +12,13 @@ import ReactDOM from 'react-dom/client'
 
 //Component повертають зовнішній вигляд. назва з великої!
 type TitleProps = {
-    title: string | number
+    text: string
+    title: string
 }
 
 
 const Title = (props: TitleProps) => {
-    return <h1>Hello {props.title}</h1>
+    return <h1>{props.text} {props.title}</h1>
 }
 const Content = () => {
     return (
@@ -45,9 +46,9 @@ const Content = () => {
 const App = () => {
     return (
         <React.Fragment>
-            <Title title={10} />
-            <Title title="Bla-bla" />
-            <Title title="Bla-bla" />
+            <Title text="Hello" title="React" />
+            <Title text="Hi" title="React.js" />
+            <Title text="Bye" title="Bla-bla" />
             <Content />
         </React.Fragment>
     )
