@@ -1,12 +1,14 @@
 import { Button, Card, CardActions, CardContent } from '@mui/material'
 import './ProductsListItem.scss'
 
-type Props = {}
+type Props = {
+    title: string
+}
 const ProductsListItem = (props: Props) => {
     return (
         <Card className="product-list-item">
             <CardContent>
-                <h4 className="product-title">iPhone X</h4>
+                <h4 className="product-title">{props.title}</h4>
                 <p className="product-desc">This is iphone X</p>
 
                 <div className="product-features">
