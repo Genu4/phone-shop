@@ -1,16 +1,18 @@
 import Container from '@mui/material/Container'
 import Home from 'pages/Home/Home'
 
-type Props = {}
-const Main = (props: Props) => {
+type Props = {
+    addProductToCart: (total: number, price: number) => void
+}
+const Main = ({ addProductToCart }: Props) => {
     return (
         <main
-        style={{
-            padding: '40px 0',
+            style={{
+                padding: '40px 0',
             }}
         >
-            <Container maxWidth="lg" >
-                <Home />
+            <Container maxWidth="lg">
+                <Home addProductToCart={addProductToCart} />
             </Container>
         </main>
     )
