@@ -7,22 +7,23 @@ import { idText } from 'typescript'
 
 type CartDataProps = {
     id: number
-    totalCount: number
+    count: number
     totalPrice: number
 }
 
 const App = () => {
     const [cartData, setCartData] = useState<CartDataProps>({
         id: 0,
-        totalCount: 0,
+        count: 0,
         totalPrice: 0,
     })
 
-    const addProductToCart = (id: number, total: number, price: number) =>
+
+    const addProductToCart = (id: number, count: number, price: number) =>
         setCartData((prevState: CartDataProps) => ({
             id: id,
-            totalCount: prevState.totalCount + total,
-            totalPrice: prevState.totalPrice + total * price,
+            count: count,
+            totalPrice: prevState.totalPrice + count * price,
         }))
 
     

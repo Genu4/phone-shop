@@ -1,7 +1,7 @@
 type Props = {
     cartData: {
         id: number
-        totalCount: number
+        count: number
         totalPrice: number
     }
 }
@@ -9,7 +9,8 @@ type Props = {
 function CartHeader({cartData}: Props) {
     return (
         <div>
-            <div>{cartData.id}: {cartData.totalCount} шт.</div>
+            
+            <div>{cartData.id}: {cartData.count} шт.</div>
             
             <div>$ {cartData.totalPrice}</div>
         </div>

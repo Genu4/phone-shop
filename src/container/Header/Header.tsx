@@ -12,7 +12,7 @@ import CartHeader from 'components/CartHeader/CartHeader'
 type Props = {
     cartData: {
         id: number
-        totalCount: number
+        count: number
         totalPrice: number
     }
 }
