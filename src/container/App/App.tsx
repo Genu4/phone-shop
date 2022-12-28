@@ -24,9 +24,12 @@ const App = () => {
             id: id,
             count: count,
             totalPrice: prevState.totalPrice + count * price,
+            
         }))
 
     
+
+        console.log(cartData)
     return (
         <div>
             <StyledEngineProvider injectFirst>
