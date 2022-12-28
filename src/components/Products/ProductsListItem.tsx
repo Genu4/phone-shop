@@ -9,6 +9,7 @@ import { useState } from 'react'
 import './ProductsListItem.scss'
 
 type Props = {
+    id: number
     title: string
     desc: string
     type: string
@@ -18,6 +19,7 @@ type Props = {
     addProductToCart: (total: number, price: number) => void
 }
 const ProductsListItem = ({
+    id,
     title,
     desc,
     type,
@@ -42,6 +44,7 @@ const ProductsListItem = ({
                     <img src={image} alt="" />
                 </div>
                 <h4 className="product-title">{title}</h4>
+                <p>Product ID: {id}</p>
                 <p className="product-desc">{desc}</p>
                 <div className="product-features">
                     <span>Type:</span> {type}

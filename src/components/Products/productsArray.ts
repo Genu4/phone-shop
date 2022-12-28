@@ -1,5 +1,5 @@
 type ProductsProps = {
-    id:number
+    id: number
     title: string
     desc: string
     type: string
