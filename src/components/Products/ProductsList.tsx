@@ -11,7 +11,7 @@ type ProductsProps = {
     image: string
 }
 type Props = {
-    addProductToCart: (total: number, price: number) => void
+    addProductToCart: (id: number, total: number, price: number) => void
 }
 
 const ProductsList = ({ addProductToCart }: Props) => {

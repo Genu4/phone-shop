@@ -11,6 +11,7 @@ import CartHeader from 'components/CartHeader/CartHeader'
 
 type Props = {
     cartData: {
+        id: number
         totalCount: number
         totalPrice: number
     }
