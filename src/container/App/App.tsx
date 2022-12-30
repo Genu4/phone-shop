@@ -3,33 +3,38 @@ import CssBaseline from '@mui/material/CssBaseline'
 import { StyledEngineProvider } from '@mui/material/styles'
 import Main from 'container/Main/Main'
 import { useState } from 'react'
-import { idText } from 'typescript'
-
-type CartDataProps = {
-    id: number
-    count: number
-    totalPrice: number
-}
+import { CartDataProps } from 'appTypes';
 
 const App = () => {
     const [cartData, setCartData] = useState<CartDataProps>({
-        id: 0,
+        products: {},
         count: 0,
-        totalPrice: 0,
+        recentProductId: '0'
     })
 
+    const addProductToCart = (id: number, count: number, price: number) => {
+        setCartData((prevState: CartDataProps) => {
+            let currentProduct = {
+                count: 0,
+                price: 0
+            };
 
-    const addProductToCart = (id: number, count: number, price: number) =>
-        setCartData((prevState: CartDataProps) => ({
-            id: id,
-            count: count,
-            totalPrice: prevState.totalPrice + count * price,
-            
-        }))
+            if(prevState.products[id]) {
+                currentProduct = prevState.products[id]
+            } else {
+                prevState.products[id] = currentProduct;
+            }
 
-    
+            currentProduct.count += count;
+            currentProduct.price += currentProduct.count * price;
 
-        console.log(cartData)
+            prevState.recentProductId = id + '';
+            prevState.count += count;
+
+            return {...prevState};
+        })
+    }
+
     return (
         <div>
             <StyledEngineProvider injectFirst>

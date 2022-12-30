@@ -9,13 +9,15 @@ import logo from 'assets/logo.svg'
 import Menu from 'components/Menu/Menu'
 import CartHeader from 'components/CartHeader/CartHeader'
 
+import { CartDataProps } from 'appTypes';
+
 type Props = {
-    cartData: {
-        id: number
-        count: number
-        totalPrice: number
-    }
+    cartData: CartDataProps
 }
+
+// В этом компоненте мы опять вынуждены в пропсы передавать объект
+// cartData, чтоб его можно было опять через пропсы спустить
+// компоненту CartHeader (хоть это и по дебильному)
 
 const Header = ({cartData}: Props) => {
     return (
